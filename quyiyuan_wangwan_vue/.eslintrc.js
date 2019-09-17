@@ -28,6 +28,49 @@ module.exports = {
     //必须要有分号，没有分号编译报错
     'semi':['error','always'],
     //格式化的代码格式忽略
-    'indent':0
+    'indent':0,
+    // @fixable 注释前后必须有空行
+    // @off 没必要限制
+    'lines-around-comment':'off',
+    // @fixable 注释的斜线或 * 后必须有空格
+    'spaced-comment': [
+      'error',
+      'always',
+      {
+        block: {
+          exceptions: [
+            '*'
+          ],
+          balanced: true
+        }
+      }
+    ],
+    // @fixable 逗号前禁止有空格，逗号后必须要有空格
+    'comma-spacing': [
+      'error',
+      {
+        'before': false,
+        'after': true
+      }
+    ],
+    // @fixable if, function 等的大括号之前必须要有空格，比如 if (a) {
+    'space-before-blocks': [
+      'error',
+      'always'
+    ],
+    // @fixable function 的小括号之前必须要有空格
+    'space-before-function-paren': [
+      'error',
+      {
+        anonymous: 'ignore',
+        named: 'never',
+        asyncArrow: 'always'
+      }
+    ],
+    // @fixable 小括号内的首尾禁止有空格
+    'space-in-parens': [
+      'error',
+      'never'
+    ],
   }
 }
