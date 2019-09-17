@@ -6,8 +6,9 @@ import router from './router';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import 'element-ui/lib/theme-chalk/display.css';
+import userInfoFilters from './filtres/userInfo';
 // 用于在某些条件下隐藏元素
-
+Object.keys(userInfoFilters).forEach(k => Vue.filter(k, userInfoFilters[k]));
 Vue.config.productionTip = false;
 Vue.use(ElementUI);
 

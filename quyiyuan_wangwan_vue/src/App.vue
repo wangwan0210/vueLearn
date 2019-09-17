@@ -23,23 +23,23 @@
   import '../static/css/base.css';
   export default {
     name: 'App',
-    data () {
+    data() {
       return {
         isActive: '1'
       };
     },
     methods: {
-      goMy () {
+      goMy() {
         // 我的
         this.isActive = '3';
-        this.$router.push({name: 'Center', params: {id: '1'}});
+        this.$router.push({name: 'RecordMsg', params: {id: '1'}});
       },
-      goServer () {
+      goServer() {
         // 服务
         this.isActive = '2';
         this.$router.push({name: 'AppointDept', params: {id: '2'}});
       },
-      goHome () {
+      goHome() {
         // 就医
         this.isActive = '1';
         this.$router.push({name: 'Home', params: {id: '3'}});

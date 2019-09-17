@@ -27,8 +27,10 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     //必须要有分号，没有分号编译报错
     'semi':['error','always'],
+    // 允许使用==
+    'eqeqeq': 0,
     //格式化的代码格式忽略
-    'indent':0,
+    //'indent':0,
     // @fixable 注释前后必须有空行
     // @off 没必要限制
     'lines-around-comment':'off',
@@ -72,5 +74,14 @@ module.exports = {
       'error',
       'never'
     ],
+    //字符串必须使用单引号
+    "quotes": [
+      "error",
+      "single"
+    ],
+    'no-tabs': 0,
+    'no-mixed-spaces-and-tabs': 0,
+    'indent': ["off", "tab"],
+    'no-trailing-spaces': 0,
   }
 }

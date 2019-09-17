@@ -84,7 +84,7 @@
 <script>
     export default {
       name: 'AppointDept',
-      data () {
+      data() {
         return {
           msgd: this.$route.params.id
         };

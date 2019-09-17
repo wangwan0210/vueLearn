@@ -19,7 +19,7 @@
           </el-col>
         </el-row>
       </el-header>
-      <el-main>Main</el-main>
+      <el-main>{{price|formatMoney}}</el-main>
       <el-footer>Footer</el-footer>
     </el-container>
   </div>
@@ -27,13 +27,14 @@
 <script>
 export default {
   name: 'Home',
-  data () {
+  data() {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      price: 80
     };
   },
   methods: {
-    goNext () {
+    goNext() {
       this.$router.push({name: 'AppointDept', params: {id: '2'}});
     }
   }

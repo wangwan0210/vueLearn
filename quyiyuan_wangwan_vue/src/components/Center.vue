@@ -7,7 +7,7 @@
 <script>
     export default {
       name: 'Center',
-      data () {
+      data() {
         return {
           msgd: this.$route.params.id
         };
