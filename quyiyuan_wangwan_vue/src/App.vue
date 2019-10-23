@@ -1,49 +1,36 @@
 <template>
   <div id="app">
-    <div class="botton_tab">
-      <div class="tabs" :class="isActive=='1'?'tab_active':''" v-on:click="goHome">
-        <div class="iconfont icon-hospitalize tabs_icon"></div>
-        <div class="tabs_text">就医</div>
-      </div>
-      <div class="tabs" :class="isActive=='2'?'tab_active':''" v-on:click="goServer">
-        <div class="iconfont icon-serve tabs_icon"></div>
-        <div class="tabs_text">服务</div>
-      </div>
-      <div class="tabs" :class="isActive=='3'?'tab_active':''" v-on:click="goMy">
-        <div class="iconfont icon-me tabs_icon"></div>
-        <div class="tabs_text">我的</div>
-      </div>
-    </div>
-    <router-view/>
+    <!--<div class="botton_tab">-->
+      <!--<div class="tabs" :class="isActive=='1'?'tab_active':''" v-on:click="goHome">-->
+        <!--<div class="iconfont icon-hospitalize tabs_icon"></div>-->
+        <!--<div class="tabs_text">就医</div>-->
+      <!--</div>-->
+      <!--<div class="tabs" :class="isActive=='2'?'tab_active':''" >-->
+        <!--<div class="iconfont icon-serve tabs_icon"></div>-->
+        <!--&lt;!&ndash;<div class="tabs_text">服务</div>&ndash;&gt;-->
+        <!--<router-link :to="{name:'AppointDept',params:{id:2}}">服务</router-link>-->
+      <!--</div>-->
+      <!--<div class="tabs" :class="isActive=='3'?'tab_active':''" v-on:click="goMy">-->
+        <!--<div class="iconfont icon-me tabs_icon"></div>-->
+        <!--<router-link :to="'/Center/'+idMy" class="tabs_text">我的</router-link>-->
+      <!--</div>-->
+
+    <!--</div>-->
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-  import '../static/fonts/font.css';
-  import '../static/css/base.css';
   export default {
     name: 'App',
     data() {
       return {
-        isActive: '1'
+        isActive: '1',
+        idMy: 1
       };
     },
     methods: {
-      goMy() {
-        // 我的
-        this.isActive = '3';
-        this.$router.push({name: 'RecordMsg', params: {id: '1'}});
-      },
-      goServer() {
-        // 服务
-        this.isActive = '2';
-        this.$router.push({name: 'AppointDept', params: {id: '2'}});
-      },
-      goHome() {
-        // 就医
-        this.isActive = '1';
-        this.$router.push({name: 'Home', params: {id: '3'}});
-      }
+
     }
 };
 </script>

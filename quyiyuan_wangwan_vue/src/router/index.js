@@ -1,8 +1,11 @@
 import Vue from 'vue';
 import RouterTemp from 'vue-router';
 import Home from '@/components/Home';
-import AppointDept from '@/components/AppointDept';
-import Center from '@/components/Center';
+import Motion from '@/components/Motion';
+import Culture from '@/components/Culture';
+import DeliciousFood from '@/components/DeliciousFood';
+import Main from '@/components/MainModule/Main';
+import RouterMain from './mainChildRouter';// 路由模块管理
 
 Vue.use(RouterTemp);
 
@@ -10,18 +13,35 @@ export default new RouterTemp({
   routes: [
     {
       path: '/',
+      redirect: Home// 默认首页
+    },
+    {
+      path: '/Home',
       name: 'Home',
       component: Home
     },
     {
-      path: '/AppointDept',
-      name: 'AppointDept',
-      component: AppointDept
+      path: '/Motion',
+      name: 'Motion',
+      component: Motion
     },
     {
-      path: '/Center',
-      name: 'Center',
-      component: Center
+      path: '/Culture/:id',
+      name: 'Culture/:id',
+      component: Culture
+    },
+    {
+      path: 'DeliciousFood',
+      name: 'DeliciousFood',
+      component: DeliciousFood
+    },
+    {
+      path: '/Main',
+      name: 'Main',
+      component: Main,
+      children: [
+        ...RouterMain
+      ]
     }
   ]
 });
