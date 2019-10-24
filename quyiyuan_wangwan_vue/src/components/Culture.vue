@@ -12,6 +12,10 @@
           msgd: this.$route.params.id
         };
       }
+      // // 组件路由守卫
+      // beforeRouteEnter(to, from, next) {
+      //
+      // }
     };
 </script>
 

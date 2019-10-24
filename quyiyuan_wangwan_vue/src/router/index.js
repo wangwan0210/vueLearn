@@ -42,6 +42,14 @@ export default new RouterTemp({
       children: [
         ...RouterMain
       ]
+      // // 组件独享前置守卫
+      // beforeEnter: (to, from, next) => {
+      //   // ...
+      // }
     }
   ]
 });
+// 全局前置守卫
+// RouterTemp.beforeEach((to, from, next) => {
+//   // ...
+// });

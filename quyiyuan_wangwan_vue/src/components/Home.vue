@@ -9,12 +9,14 @@
         <span class="icon-accompany-card span_icon_two"></span>
         <span>文化</span>
       </div>
-      <router-link :to="'/Culture/'+myid" class="item_div">
+      <!--append 属性，在当前要跳转路由前加基路由;tag 属性router-link会渲染成tag指定标签-->
+      <router-link  tag="div" :to="'/Culture/'+myid" append class="item_div">
         <span class="icon-accompany-card span_icon_three"></span>
         <span>运动</span>
       </router-link>
       <div>
-        <router-link :to="'/Main/'" class="item_div">
+        <!--replace 属性，走的是$route.replace();-->
+        <router-link  :to="'/Main/'" replace class="item_div">
           <span class="icon-accompany-card span_icon_three"></span>
           <span>生活</span>
         </router-link>
