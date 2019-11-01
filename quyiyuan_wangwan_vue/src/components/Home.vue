@@ -28,18 +28,24 @@
       <div id="alertId"></div>
       <!--自定义指令v-sexColor-->
       <div v-sexColor:{sexTemValue:sexValue} @click="changeSex">我的性别是{{sexValue | getSex}}</div>
+
+     <!-- model选项的使用-->
+      <my-input v-model="name" value="some value"></my-input>
+      <div>{{name}}</div>
     </div>
 
   </div>
 </template>
 <script>
   import Uploader from 'vux-uploader';
+  import myInput from './myInput';
   export default {
   name: 'Home',
   data() {
     return {
       myid: 10,
-      sexValue: '2'
+      sexValue: '2',
+      name: '请输入姓名'
     };
   },
   methods: {
@@ -78,7 +84,8 @@
     }
   },
   components: {
-    Uploader
+    Uploader,
+    myInput
   },
     watch: {
       myid(val, oldVal) {
