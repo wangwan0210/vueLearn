@@ -23,6 +23,11 @@ new Vue({
   el: '#app',
   router,
   store,
+  data() {
+    return {
+      rootData: '我是root数据'
+    };
+  },
   components: { App },
   template: '<App/>'
 }).$mount('#app');

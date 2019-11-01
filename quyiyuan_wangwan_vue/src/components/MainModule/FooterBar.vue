@@ -1,11 +1,15 @@
 <template>
   <div>
-    <div>{{psMsg}}</div>
+    <div style="color: #006633;font-size: 20px">父组件传过来的值{{psMsg}}</div>
     <div>我是父组件通过provide传递，子组件通过inject拿到的{{parentMsg}}</div>
-    <button @click="setUser">给父组件传值</button>
+    <button @click="setUser">传值给父组件</button>
+    <keep-alive>
+      <myHeader></myHeader>
+    </keep-alive>
   </div>
 </template>
 <script>
+  import myHeader from './Header';
   export default {
     name: 'FooterBar',
     inject: ['parentData'],
@@ -16,6 +20,9 @@
         parentMsg: this.parentData
       };
     },
+    components: {
+      myHeader
+    },
     props: ['psMsg'],
     methods: {
       setUser() {
@@ -25,3 +32,11 @@
     }
   };
 </script>
+<style scoped>
+  button{
+    width: 90px;
+    height: 50px;
+    background-color: red;
+    border-radius: 12px;
+  }
+</style>

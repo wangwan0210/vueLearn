@@ -5,18 +5,6 @@
 </template>
 
 <script>
-  export default {
-    name: 'App',
-    data() {
-      return {
-        isActive: '1',
-        idMy: 1
-      };
-    },
-    methods: {
-
-    }
-};
 </script>
 <style>
 #app {
