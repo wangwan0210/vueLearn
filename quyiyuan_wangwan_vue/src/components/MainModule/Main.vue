@@ -32,6 +32,9 @@
       FooterBar,
       myHeader
     },
+    provide: {
+      parentData: this.workMoney
+    },
     methods: {
       getData(sonMsg) {
         this.sonMsg = sonMsg;
