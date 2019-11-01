@@ -26,7 +26,8 @@
       <button @click="addVuexCount">加</button>
       <button @click="reduceVuexCount">减</button>
       <div id="alertId"></div>
-      <div>我的性别是{{sexValue | getSex}}</div>
+      <!--自定义指令v-sexColor-->
+      <div v-sexColor:{sexTemValue:sexValue} @click="changeSex">我的性别是{{sexValue | getSex}}</div>
     </div>
 
   </div>
@@ -55,6 +56,13 @@
     },
     reduceVuexCount() {
       this.$store.commit('reduce');
+    },
+    changeSex() {
+      if (this.sexValue == '1') {
+        this.sexValue = '2';
+      } else {
+        this.sexValue = '1';
+      }
     }
   },
     // 局部组件过滤器

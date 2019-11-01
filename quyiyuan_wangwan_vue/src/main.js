@@ -8,11 +8,13 @@ import baseCss from '../static/css/base.css';
 import fontCss from '../static/fonts/font.css';
 import store from '../src/store/index';
 import alert from '../src/commonTemplate/alert';
+import myUserDirective from '../src/directive/myUserDirective';
 // 用于在某些条件下隐藏元素
 // 全局过滤器
 Object.keys(userInfoFilters).forEach(k => Vue.filter(k, userInfoFilters[k]));
 Vue.config.productionTip = false;
 
+Vue.use(myUserDirective);
 Vue.use(baseCss);
 Vue.use(fontCss);
 
