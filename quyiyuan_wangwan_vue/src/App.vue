@@ -1,21 +1,5 @@
 <template>
   <div id="app">
-    <!--<div class="botton_tab">-->
-      <!--<div class="tabs" :class="isActive=='1'?'tab_active':''" v-on:click="goHome">-->
-        <!--<div class="iconfont icon-hospitalize tabs_icon"></div>-->
-        <!--<div class="tabs_text">就医</div>-->
-      <!--</div>-->
-      <!--<div class="tabs" :class="isActive=='2'?'tab_active':''" >-->
-        <!--<div class="iconfont icon-serve tabs_icon"></div>-->
-        <!--&lt;!&ndash;<div class="tabs_text">服务</div>&ndash;&gt;-->
-        <!--<router-link :to="{name:'AppointDept',params:{id:2}}">服务</router-link>-->
-      <!--</div>-->
-      <!--<div class="tabs" :class="isActive=='3'?'tab_active':''" v-on:click="goMy">-->
-        <!--<div class="iconfont icon-me tabs_icon"></div>-->
-        <!--<router-link :to="'/Center/'+idMy" class="tabs_text">我的</router-link>-->
-      <!--</div>-->
-
-    <!--</div>-->
     <router-view></router-view>
   </div>
 </template>

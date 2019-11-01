@@ -25,6 +25,8 @@
       <div>我从vuex状态管理通过getter获取的值为{{this.$store.getters.getStateCount}}</div>
       <button @click="addVuexCount">加</button>
       <button @click="reduceVuexCount">减</button>
+      <div id="alertId"></div>
+      <div>我的性别是{{sexValue | getSex}}</div>
     </div>
 
   </div>
@@ -36,12 +38,7 @@
   data() {
     return {
       myid: 10,
-      msg: 'Welcome to Your Vue.js App',
-      price: 80,
-      delbutton: false,
-      fileListFront: [],
-      fileListBack: [],
-      images: []
+      sexValue: '2'
     };
   },
   methods: {
@@ -60,8 +57,26 @@
       this.$store.commit('reduce');
     }
   },
-    components: {
-      Uploader
+    // 局部组件过滤器
+  filters: {
+    getSex: function (value) {
+      let sex = '男生';
+      if (value == '1') {
+        sex = '男生';
+      } else {
+        sex = '女孩';
+      }
+      return sex;
+    }
+  },
+  components: {
+    Uploader
+  },
+    watch: {
+      myid(val, oldVal) {
+
+      }
+
     }
 };
 </script>
