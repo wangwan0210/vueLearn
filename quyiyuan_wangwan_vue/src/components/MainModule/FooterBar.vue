@@ -17,7 +17,8 @@
       return {
         mag: '儿子组件传值',
         magNext: '儿子组件另一种传值',
-        parentMsg: this.parentData
+        parentMsg: this.parentData,
+        refData: '我是通过$refs获取的子组件的值'
       };
     },
     components: {
